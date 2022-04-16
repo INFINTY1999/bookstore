@@ -1,0 +1,15 @@
+{% extends 'Header.html' %}
+{% block content %}
+<h1>Book Details 
+<a href="{% url 'bookedit' book.Id %}">edit</a>
+<a href="{% url 'bookdelete' book.Id %}">delete</a>
+</h1>
+<br>
+
+<h3>Book Name =  {{book.Book_name}} </h3>
+<h3>Book Id =  {{book.Book_id}} </h3>
+<h3>Book Price =  {{book.Book_price}} </h3>
+<h3>Number of Book  =  {{book.Numb_books}} </h3>
+<h3>Author Name =  {{book.Author_name}} </h3>
+
+{% endblock content %}

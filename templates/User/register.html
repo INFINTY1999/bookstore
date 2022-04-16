@@ -1,0 +1,24 @@
+<h3>Account SignUp</h3>
+
+<form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <!-- Input:Text -->
+    {% for field in form %}
+    
+    <label for="formInput#text">{{field.label}}</label>
+    {{field}}
+    <br>
+    <br>
+    {% for error in field.errors %}
+    
+    {{error}}
+    
+    {% endfor %}
+    {% endfor %}
+    <br>
+  <input type="submit" value="Sign  In" />
+</form>
+
+<p>Already have an Account?</p>
+<a href="{% url 'login' %}">Log In</a>
+</div>

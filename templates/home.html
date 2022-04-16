@@ -1,0 +1,24 @@
+{% extends 'Header.html' %}
+{% block content %}
+<h1>Profile
+<a href="{% url 'storeadd' %}">Add New Store</a>
+</h1>
+<br>
+
+<h3>Book Name =  {{profile.User_name}} </h3>
+
+<h3>Full Name =  {{profile.First_name}}{{profiles.Last_name}} </h3>
+
+<h3>Email =  {{profile.Email}} </h3>
+
+<br>
+<h1>List of all stores</h1>
+<br>
+
+{% for stores in store %}
+
+<h3>Store Name = <a href="{% url 'store' stores.Id %}">{{stores.store_name}}</a></h3>
+
+{% endfor %}
+
+{% endblock content %}

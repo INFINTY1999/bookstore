@@ -1,0 +1,16 @@
+<h1>Add Store</h1>
+
+<form action = "" method = "post">
+
+{% csrf_token %}
+
+{% for field in form %}
+
+<label for="formInput#text">{{field.label}}</label>
+{{field}}
+<br>
+<br>
+{% endfor %}
+<input type="submit" value="Submit" />
+
+</form>

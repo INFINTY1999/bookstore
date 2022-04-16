@@ -1,0 +1,41 @@
+{% extends 'Header.html' %}
+{% block content %}
+
+<h1>STORE &emsp;
+<a href="{% url 'storeedit' store.Id%}">Edit</a>
+<a href="{% url 'storedelete' store.Id%}">Delete</a>
+<a href="{% url 'storeeditadd' store.Id%}">Add Book in Store</a>
+</h1>
+<br>
+
+<h3>Store Name =  {{store.store_name}} </h3>
+
+<h3>State =  {{store.state}} </h3>
+
+<h3>Store Address =  {{store.Address}} </h3>
+<br>    
+<h1>Book Inventory &emsp;<a href="{% url 'bookadd' %}">Add New Book</a></h1>
+<br>   
+
+
+{% for books in book %}
+
+<h3>
+Name = <a href="{% url 'bookview' books.Id %}">{{books.Book_name}}</a>&emsp;&emsp;
+
+{% if books.Numb_books %}
+
+Number of books available :  {{books.Numb_books}}
+
+{% else %}
+
+This book is out of stock
+</h3>
+
+{% endif %}
+
+{% endfor %}
+
+
+
+{% endblock  %}

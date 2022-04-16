@@ -1,0 +1,20 @@
+<h3>Account Login</h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="formInput#text">Username: </label>
+    <input id="formInput#text" type="text" name="username" placeholder="Enter your username..."/>
+    <label for="formInput#password">Password: </label>
+    <input
+      id="formInput#passowrd"
+      type="password"
+      name="password"
+      placeholder="••••••••"
+    />    
+    <input type="submit" value="Log In" />
+</form>
+
+<p>
+Don’t have an Account?
+</p>
+<a href="{% url 'register' %}">Sign Up</a>
