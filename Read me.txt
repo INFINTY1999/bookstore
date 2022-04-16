@@ -1,0 +1,3 @@
+Assumptions :-
+1.> User(Profile) can have lot of stores so.I use one to many relationship to connect store and profile.
+2.> There can be same book in different stores. so, I used many to many relationship between STORE and BOOKS.
